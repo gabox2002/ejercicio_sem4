@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+body {
+    background-color: #E11364;
+
+}
+header h1 {
+    background-color: #BC105C;
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 8%;
+    padding: 5px 0;
+    border-left: 0.4rem solid white; 
+    border-right: 0.4rem solid white;
+}
+h3 {
+    color: white;
+    font-size: 2rem;
+    margin: 1rem 0.5rem;
+    
+}
+h5 {
+    color: #86142E;
+    text-align: right;
+    font-size: 1.5rem;
+    border-bottom: dotted #86142E;
+    margin: 1rem 4%;
+
+}
+.contenedor_ppal {
+    background-color: #BC105C; 
+    border-radius: 1%;
+    margin: 5px 8%;
+    padding: 5px 0.5rem;
+    
+}
+.img_content {
+    text-align: center;
+    border-radius: 1%;
+    padding: 2% 4%;
+    width: 92%;
+}
+
+section {
+    background-color: #FBFAFC; 
+    border-radius: 1%;
+    margin: 20px 10px;
+    padding: 0.5rem 0.5rem;
+}
+p {
+    text-align: start;
+    font-size: 16px;
+    margin: 2% 4%;
+}
+section a {
+    background-color: green; 
+    display: block; 
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 20px; 
+    color: white;  
+    font-weight: bold;
+    text-decoration: none; 
+    border-radius: 8%;
+    width: 4rem; 
+    transition: background-color 0.1s;
+}
+
+a:hover {
+    background-color: #BC105C; 
+    color: white;
+}
+footer {
+    background-color: #E96093;
+    color: white;
+    text-align: center;
+    border-radius: 1%;
+    margin: 1rem 8%;
+    padding: 1rem 0;
+}
