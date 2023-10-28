@@ -8,29 +8,63 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh;
+    min-height: 95vh;
     background-color: #0D1117; 
     color: #C9D1D9; 
     text-align: center;
     padding: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem !important;
 }
 header {
     background-color: #0D1117; 
-    padding: 2rem 0 0 0;
+    padding: 1rem 0;
+}
+.header-ppal {
     margin-top: 50px;
+
 }
 h1 {
-    color: #F0544F; 
+    color: #ff0800a9; 
     font-size: 3rem;
     margin: 0;
+    border-style: double;
+    border-width: 5px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+h3 {
+    color: #ff0800a9;
+    font-size: 2rem;
+    margin: 1rem 0.5rem 0 0.5rem;
+}h4 {
+    color: rgb(250, 250, 250);
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: left;
+}
+h5 {
+    color: #ff0800a9;
+    text-align: right;
+    font-size: 1.8rem;
+    margin: 1rem 4%;
+    margin-bottom: 1rem;
+    padding-right: 5px;
 }
 .contenedor_ppal {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
-    
+}
+.contenedor_juego {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgb(22, 22, 22); 
+    border-radius: 1%;
+    margin: 5px 8%;
+    padding: 5px 0.5rem;
 }
 .seccion-container {
     display: flex;
@@ -45,7 +79,18 @@ h1 {
     height: 350px;
     position: relative;
     box-shadow: 10px 8px 6px red;
-
+}
+p {
+    text-align: start;
+    font-size: 0.9rem;
+    margin: 2% 4%;
+    text-indent: 0px;
+}
+.section {
+    background-color: #000000; 
+    border-radius: 1%;
+    margin: 20px 10px;
+    padding: 0.5rem 0.5rem;
 }
 .card-back, .card-front {
     position: absolute;
@@ -56,7 +101,7 @@ h1 {
     >img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: fill;
         overflow: hidden;
     }
 }
@@ -80,11 +125,6 @@ h1 {
     transform: rotateY(0deg);
     cursor: pointer;
 }
-h5 {
-    color: #F0544F; 
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
 .title {
     column-span: all;
     display: block;
@@ -100,13 +140,17 @@ h5 {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    text-align: center;
+    width: 92%;
 }
 p {
-    text-align: left;
-    font-size: 1rem;
+    text-align: justify;
+    font-size: 0.9rem;
+    text-indent: 40px;
+    margin-bottom: 5px;
 }
 .boton-comprar {
-    background-color: #F0544F; 
+    background-color: #ff0800a9; 
     color: white;
     font-weight: bold;
     text-decoration: none;
@@ -129,18 +173,263 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 999;
 }
-@media (max-width: 600px) {
-    .seccion-container {
-        flex-direction: column;
-        text-align: center;
+/*Cartilla para venta*/
+.menu {
+    color: white;
+}
+.section div p {
+    text-align: justify;
+}
+.product-container {
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.482);
+    margin: 0 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.product-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+    margin: 10px 0;
+    padding: 15px;
+    gap: 10px;
+}
+.product-image img, .product-image iframe{
+    max-width: 100%;
+    max-height: 180px;
+}
+.product-info {
+    max-width: 60%;
+    padding: 0;
+    text-align: left;
+    
+}
+.product-title {
+    font-size: 24px;
+    margin: 20px 0;
+}
+.product-precio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.precio {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0 10px 20px;
+}
+.product-price {
+    font-size: 20px;
+    color: #ff1900;
+    font-weight: bold;
+}
+.product-description {
+    margin: 20px 0 0 20px;
+}
+.product-details {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.toggle-details {
+    display: none;
+}
+ul {
+    margin: 10px 20px;
+}
+.toggle-label {
+    cursor: pointer;
+    color: #ff1900;
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.toggle-details:checked ~ .toggle-label {
+    display: none;
+}
+.toggle-details:checked ~ .toggle-label-less {
+    display: block;
+}
+.toggle-details:not(:checked) ~ .details-content {
+    display: none;
+}
+table {
+    display: flex;
+    border-collapse: collapse;
+    width: auto;
+    margin: 10px 0;
+    justify-content: center;
+}
+th, td {
+    border: 1px solid #b2b2b2;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #eeeeee;
+    color: black;
+}
+.toggle-label-less {
+    cursor: pointer;
+    color: red;
+    display: none;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+/*Personajes del juego*/
+.content_character {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;   
+    background-color: rgba(0, 0, 0, 0.482); 
+    border-radius: 1%;
+    margin: 0 20px;    
+    
+}
+.content_character div {
+    position: relative;
+    width: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.content_character div:hover img {
+    transform: scale(1.15);
+}
+.content_character div .title-box {
+    content: "";
+    height: 100px;
+    position: absolute;
+    transform: translateY(50px);
+    transition: 0.3s ease;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(98, 8, 121, 0), rgb(0, 0, 0));
+    width: 100%;
+    z-index: 1;
+}
+.content_character div img {
+    object-fit: cover;
+    height: 100%;
+    height: 200px;
+    width: 100%;
+    transition: 0.3s ease;
+}
+.content_character div .name {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    font-weight: bold;
+    color: #fff;
+    transform: translate(32px);
+    padding: 10px;
+    z-index: 10;
+    transition: 0.3s ease;
+    cursor: default;
+}
+.content_character div:hover .name, 
+.content_character div:hover .title-box {
+    transform: translateY(0);
+}
+/* Galeria de imagenes*/
+.gallery {
+    margin: 1rem;
+    height: 100%;
+    width: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin: 0 20px;    
+    padding: 5px 0.5rem;
+}
+.gallery-container .gallery-item {
+    scroll-snap-align: start;
+}
+.gallery-item {
+    display: flex;
+}
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 800px) {
+    header {
+        padding: 0;
+        margin-top: 0;
+        margin: 0;
+        padding: 0;
     }
-    .seccion-container {
-        height: 500px;
+    .header-ppal {
+        margin-top: 20px;
+    }
+    body {
+        margin: 0;
+        padding: 0 1rem 2rem 1rem;  
+    }
+    p {
+        font-size: 0.8rem;
+        text-indent: 20px;
+        margin-bottom: 10px;
+    }
+    h1 {
+        margin: 40px 0 20px 0;
+    }
+    header {
+        padding: 0;
+        margin-top: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .product-container {
+        flex-wrap: wrap;
+    }
+    
+    .contenedor_juego {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+    .product-info {
+        max-width: 100%;
+    }
+    .product-image {
+        width: auto;
+        height: 100%;
+        padding: 0;
     }
     .card-back, .card-front {
         >img {
-            object-fit:fill ;
-        }
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;        }
+    }
+    .precio {
+        gap: 10px;
+        margin: 0;
+    }
+    .product-precio {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .content_character div .name {
+        font-size: 10px;
+        padding: 0px;
+    }
+    .content_character {
+        gap: 3px;   
+    }
+    .contenedor_ppal {
+        gap: 3rem;
     }
 }
