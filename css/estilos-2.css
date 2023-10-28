@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: #0D1117; 
+    color: #C9D1D9; 
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+header {
+    background-color: #0D1117; 
+    padding: 2rem 0 0 0;
+    margin-top: 50px;
+}
+h1 {
+    color: #F0544F; 
+    font-size: 3rem;
+    margin: 0;
+}
+.contenedor_ppal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    
+}
+.seccion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A1D24; 
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 650px;
+    width: 100%;
+    width: 650px;
+    height: 350px;
+    position: relative;
+    box-shadow: 10px 8px 6px red;
+
+}
+.card-back, .card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.3s;
+    >img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+}
+.card-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+.seccion-container:hover .card-front {
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+.seccion-container:hover .card-back {
+    transform: rotateY(0deg);
+    cursor: pointer;
+}
+h5 {
+    color: #F0544F; 
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+.title {
+    column-span: all;
+    display: block;
+    margin:  10px 0 ;
+}
+.content {
+    columns: 200px 2;
+    column-gap: 30px;
+    padding: 0px;
+    margin: 0 20px;
+}
+.img_content {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+p {
+    text-align: left;
+    font-size: 1rem;
+}
+.boton-comprar {
+    background-color: #F0544F; 
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: background-color 0.2s;
+    display: inline-block;
+    margin-top: 1rem;
+}
+.boton-comprar:hover {
+    background-color: #F92F2B; 
+}
+footer {
+    background-color: #0D1117; 
+    color: #C9D1D9; 
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+@media (max-width: 600px) {
+    .seccion-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .seccion-container {
+        height: 500px;
+    }
+    .card-back, .card-front {
+        >img {
+            object-fit:fill ;
+        }
+    }
+}
